@@ -1,0 +1,163 @@
+/**
+* 28. Showcase Blocks
+* ----------------------------------------------------------------------- *
+*/
+
+.ui-showcase-blocks{
+    text-align: center;
+    .front{
+        z-index: 2;
+    }
+    & > .row,
+    & > .step-wrapper > .row{
+        margin-bottom: 4rem;
+        &:nth-last-child(1){
+            margin-bottom: 0;
+        }
+        & > div:nth-child(1){
+            margin-bottom: 4rem
+        }
+    }
+    & > .row{
+        & > div:nth-child(1){
+            margin-bottom: 4rem
+        }
+    }
+    & > .step-wrapper > .row{
+        & > div:nth-child(1){
+            margin-bottom: 2rem
+        }
+    }
+    @include breakpoint(md){
+        & > .row,
+        & > .step-wrapper > .row{
+            & > div:nth-child(1){
+                margin-bottom: 0;
+                z-index: 2;
+            }
+        }
+        & > .row:nth-child(even),
+        & > .step-wrapper:nth-child(even) > .row{
+            flex-direction: row-reverse;
+        }
+        text-align: right;
+    }
+    
+    & img{
+        width: 100%;
+        height: auto;
+    }
+    .heading{
+
+        font-weight: 100;
+        font-size: 64px;
+        color: #34B8C7;
+        letter-spacing: 0;
+        text-align: right;
+        @include media-breakpoint-down(xs) {
+            font-size: 46px;
+        }
+    }
+    .sub-heading{
+
+        color: #FFFFFF;
+        letter-spacing: 0;
+        font-weight: bold;
+        @include media-breakpoint-up(xs) {
+            &.small {
+                font-size: 24px;
+            }
+            &.big {
+                font-size: 36px;
+            }
+        }
+        @include media-breakpoint-down(xs) {
+            &.small {
+                font-size: 22px;
+            }
+            &.big {
+                font-size: 36px;
+            }
+        }
+    }
+
+    .paragraph{
+
+        font-size: 18px;
+        &.dark{
+            color: #949494;
+        }
+        &.light{
+            color: #CCCCCC;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        .showcase-border-right {
+            border: 3px solid #46AEC2;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-right: none;
+            padding: 60px 140px;
+            margin-right: -225px;
+
+        }
+        .showcase-border-left {
+
+
+            padding: 60px 70px;
+            margin-right: 55px;
+            margin-left: -170px;
+
+            border: 3px solid #46AEC2;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-left: none;
+            //padding: 60px 140px;
+            //margin-right: 55px;
+            //margin-left: -280px;
+            text-align: left;
+            .heading {
+                text-align: left;
+            }
+        }
+    }
+    @include media-breakpoint-down(lg){
+        .showcase-border-right{
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-right: none;
+            padding-bottom:  60px;
+            text-align: right;
+
+        }
+        .showcase-border-left{
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-left: none;
+            padding-bottom:  60px;
+            text-align: right;
+            .heading{
+                text-align: right;
+            }
+        }
+    }
+}
+.laptop-showcase{
+    & img.laptop{
+        margin-bottom: -6rem;
+
+        @include media-breakpoint-down(md){
+            margin-top: 4rem;
+        }
+
+        @include media-breakpoint-up(md){
+            margin-right: -16rem;
+        }
+        @include media-breakpoint-up(lg){
+            margin-right: -14rem;
+        }
+        @include media-breakpoint-up(xl){
+            margin-right: -12rem;
+        }
+    }
+}
